@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Advanced HTML5 elements">
+    <meta name="author" content="Mary Cathline">
+    
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="values.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="contact.css">
+    
+
+    <title>MotherChild Health Organization (MOCHO)</title>
+</head>
+
+<body>
+    <header id="logo">
+        <img src="images/mocho.jpg" alt="MOCHO logo" class="logo">
+        <h1>MotherChild Health Organization (MOCHO)</h1>
+    </header>
+
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="values.html">Core Values</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="table">
+            <h2>Our Services</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Description</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><em><b>Antenatal Care</b></em></td>
+                        <td>Regular check-ups to monitor pregnancy and fetal health.</td>
+                        <td>Monday - Friday</td>
+                    </tr>
+                    <tr>
+                        <td><em><b>Postnatal Care</b></em></td>
+                        <td>Medical support for mothers and newborns after delivery.</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td><em><b>Family Planning</b></em></td>
+                        <td>Guidance and provision of contraceptive options.</td>
+                        <td>Tuesday & Thursday</td>
+                    </tr>
+                    <tr>
+                        <td><em><b>Immunization</b></em></td>
+                        <td>Vaccination programs for infants and young children.</td>
+                        <td>Wednesday & Saturday</td>
+                    </tr>
+                    <tr>
+                        <td><em><b>Health Education</b></em></td>
+                        <td>Workshops on maternal health, hygiene, and nutrition.</td>
+                        <td>Monthly</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+            </table>
+        </section>
+
+        <section id="video">
+            <h2>YouTube Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/WFCtFeAGwJc"
+                title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+        <section id="image">
+            <h2>External Image</h2>
+            <img src="images/mother.jpg" alt="Mother and child">
+        </section>
+
+        <section id="form">
+            <h2>Registration Form</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>User Registration</legend>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required minlength="8"><br><br>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required><br><br>
+
+                    <label for="country">Country:</label>
+                    <select id="country" name="country">
+                        <option value="Kenya">Kenya</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="other">Other</option>
+                    </select><br><br>
+
+                    <p>Gender:</p>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+
+                    <input type="radio" id="otherGender" name="gender" value="other">
+                    <label for="otherGender">Other</label><br><br>
+
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </fieldset>
+            </form>
+        </section>
+
+        <footer id="footer">
+            <p>&copy; 2025 MotherChild Health Organization (MOCHO)</p>
+            <p>Designed by Mary Cathline</p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+
+.container{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 0.5fr 1.2fr 0.8fr;
+  height: 100vh;
+  grid-template-areas:
+  "nav nav nav nav"
+  "table video video form"
+  "table image image form"
+  "footer footer footer footer";
+  
+  grid-gap: 0.2rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+  color: rgb(12, 17, 2);
+  text-align:center;
+  width: 100%; /* Ensures container fits within screen */
+  max-width: 100vw; /* Prevents overflow beyond viewport */
+  padding: 0; 
+  box-sizing: border-box; /* Ensures padding doesn’t add extra width */
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+#logo {
+  background-color: rgb(60, 60, 206);
+  display: flex; /* Use flexbox to align logo and h1 */
+  align-items: center; /* Vertically align items */
+  padding-left: 10px; /* Add some padding for spacing */
+  max-width: 100%; /* Allow container to shrink */
+  box-sizing: border-box; /* Include padding in width */
+  overflow: visible;
+  flex-shrink: 1;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+#logo img {
+  width: 50px; /* Adjust logo size */
+  height: 50px; /* Adjust logo size */
+  border-radius: 50%; /* Make logo circular */
+  margin-right: 10px; /* Add space between logo and h1 */
+}
+#logo h1 {
+  margin: 0; /* Remove default margin from h1 */
+  font-size: 2.5em; /* Adjust font size */
+  color: white;
+  padding: 2px; /* Add padding to h1 */
+  word-wrap: break-word; /* Allow long words to wrap */
+
+}
+
+nav{
+  grid-area: nav;
+  background-color: rgb(60, 60, 206);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  
+}
+nav ul {
+  display: flex; /* Keeps items in a row */
+  justify-content: center; /* Centers navigation items */
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block; /* Ensures items stay in a row */
+  margin: 0 10px; /* Adds spacing between links */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px; /* Adds padding for better clickability */
+  display: inline-block; /* Ensures the padding applies correctly */
+}
+
+#table{
+  grid-area: table;
+  background-color: rgb(41, 128, 228);
+  max-width: 100%;
+}
+#form{
+  grid-area: form;
+  background-color: rgb(85, 134, 226);
+}	
+#video{
+grid-area: video;
+  background-color: rgb(108, 243, 223);
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+#video iframe{
+  margin-top: 20px;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+#video h2{
+  margin: 0;
+  z-index: 1;
+
+}
+#image {
+  grid-area: image;
+  background-color: rgb(228, 41, 41);
+  display: flex; /* Use flexbox */
+  flex-direction: column;
+  align-items: flex-start; /* Align image to the top */
+  justify-content: flex-start; /* Align image to the left */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+#image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin-top: 5px;
+}
+
+#image h2 {
+  margin: 0; /* Remove default margin from h2 */
+}
+p {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center; /* Center text */
+  line-height: 1.6; /* Improves readability */
+}
+p h2 {
+  margin: 0; /* Remove default margin from h2 */
+  text-align: center; /* Center text */
+}
+
+
+#footer{
+  grid-area: footer;
+  background-color: blue;
+}
+#table {
+  grid-area: table;
+  background-color: rgb(41, 128, 228);
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack h2 and table vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: flex-start; /* Align to the top */
+  padding: 0; /* Add padding for spacing */
+  
+}
+
+#table h2 {
+  margin: 0;
+}
+
+#table table {
+  width: 100%; /* Make table fill the width */
+  border-collapse: collapse; /* Collapse borders for cleaner look */
+  margin-top: 10px; /* Add space between h2 and table */
+}
+
+#table th,
+#table td {
+  border: 1px solid #ddd; /* Add borders to cells */
+  padding: 0;
+  text-align: center; /* Center text in cells */
+}
+
+#table th {
+  background-color: #f2f2f2; /* Add background color to headers */
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .container{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1.5fr 1.2fr 0.8fr auto;
+    grid-template-areas:
+    "nav"
+    "video"
+    "image"
+    "table"
+    "form"
+    "footer";
+    display: flex;
+  flex-direction: column; /* Stacks content vertically */
+  align-items: center;
+  }
+  #logo h1 {
+    font-size: 2.0em; /* Reduce font size on small screens */
+    flex-basis: 100%;
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+}
+nav ul {
+  flex-wrap: wrap; /* Allows items to wrap if they don’t fit */
+}
+section {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+  
+}
+@media only screen and (min-width: 1024px) {
+  .container{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+    grid-template-areas:
+    "nav nav nav nav"
+    "table video video form"
+    "table image image form"
+    "footer footer footer footer";
+  }
+  
+}
+
