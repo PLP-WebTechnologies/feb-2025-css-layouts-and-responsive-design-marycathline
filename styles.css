@@ -1,14 +1,14 @@
 
 .container{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 0.5fr 1.2fr 0.8fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 0.5fr 1.2fr;
   height: 100vh;
   grid-template-areas:
-  "nav nav nav nav"
-  "table video video form"
-  "table image image form"
-  "footer footer footer footer";
+  "nav nav nav "
+  "table video form"
+  "table image form"
+  "footer footer footer";
   
   grid-gap: 0.2rem;
   font-family: 'Times New Roman', Times, serif;
@@ -56,8 +56,7 @@ nav{
   grid-area: nav;
   background-color: rgb(60, 60, 206);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; /* Centers navigation items */
   align-items: center;
   text-decoration: none;
   
@@ -69,11 +68,16 @@ nav ul {
   padding: 0;
   margin: 0;
   list-style: none;
+  float: none; /* Ensures no float issues */
+  
 }
 
 nav ul li {
   display: inline-block; /* Ensures items stay in a row */
   margin: 0 10px; /* Adds spacing between links */
+  font-weight: 300; /* Makes text lighter */
+  font-size: 1.2em; /* Adjust font size */
+
 }
 
 nav ul li a {
@@ -110,10 +114,18 @@ grid-area: video;
   max-height: 100%;
 }
 #video h2{
-  margin: 0;
-  z-index: 1;
-
+  margin: 0; /* Remove default margin from h2 */
 }
+#image h2 {
+  margin: 0; /* Remove default margin from h2 */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 #image {
   grid-area: image;
   background-color: rgb(228, 41, 41);
@@ -125,15 +137,11 @@ grid-area: video;
   margin: 0; /* Remove margin */
 }
 
-#image img {
+.patient-image {
   max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  margin-top: 5px;
-}
-
-#image h2 {
-  margin: 0; /* Remove default margin from h2 */
+  height: auto;
+  display: block;
+  object-fit: cover; /* or contain */
 }
 p {
   max-width: 100%;
@@ -148,8 +156,14 @@ p h2 {
 
 
 #footer{
-  grid-area: footer;
-  background-color: blue;
+grid-area: footer;
+background-color: blue;
+text-align: center;
+margin: 0; /* Remove margin */
+justify-content: center;
+align-items: center;
+width: 100%;
+padding: 10px;
 }
 #table {
   grid-area: table;
@@ -158,7 +172,9 @@ p h2 {
   flex-direction: column; /* Stack h2 and table vertically */
   align-items: center; /* Center horizontally */
   justify-content: flex-start; /* Align to the top */
-  padding: 0; /* Add padding for spacing */
+  padding: 10px; /* Add padding for spacing */
+  margin: 5px; /* Add margin for spacing */
+  max-width: 100%; /* Allow container to shrink */
   
 }
 
@@ -175,8 +191,9 @@ p h2 {
 #table th,
 #table td {
   border: 1px solid #ddd; /* Add borders to cells */
-  padding: 0;
+  padding: 5px; /* Add padding to cells */
   text-align: center; /* Center text in cells */
+  vertical-align: middle; /* Center text in cells */
 }
 
 #table th {
@@ -199,6 +216,9 @@ p h2 {
   flex-direction: column; /* Stacks content vertically */
   align-items: center;
   }
+  *{
+    box-sizing: border-box; /* Include padding in width */
+  }
   #logo h1 {
     font-size: 2.0em; /* Reduce font size on small screens */
     flex-basis: 100%;
@@ -210,7 +230,8 @@ nav ul {
   flex-wrap: wrap; /* Allows items to wrap if they don’t fit */
 }
 section {
-  width: 100%;
+  width: 100%; /* Ensures sections take full width */
+  padding: 0; /* Remove padding */
   max-width: 100%;
   text-align: center;
 }
@@ -218,13 +239,13 @@ section {
 }
 @media only screen and (min-width: 1024px) {
   .container{
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr;
     grid-template-areas:
-    "nav nav nav nav"
-    "table video video form"
-    "table image image form"
-    "footer footer footer footer";
+    "nav nav nav"
+    "table video form"
+    "table image form"
+    "footer footer footer";
   }
   
 }
